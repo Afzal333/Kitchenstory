@@ -1,0 +1,121 @@
+<html>
+    <head>
+
+    </head>
+    <body style="background-color: seashell;">
+        <nav class="navbar navbar-expand-lg navbar-light  ">
+            <div class="container-fluid">
+            <img src="./assets/images/logo2.jpg" class="navbar-brand" width="100px" height="100px" />
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapseExample" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    
+                 
+                  <li class="nav-item active">
+                    <a class="nav-link" id="anch" [routerLink]="['/view']"><i class="fa fa-leaf" ></i> View Items</a>
+                  </li>
+                  
+                  </ul>
+                  <ul  class="navbar-nav ml-auto topnav">
+                    
+                    <li class="nav-item active">
+                      <a class="nav-link" id="anch" [routerLink]="['/']"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </div>
+            </nav>
+<br/>
+<br/>
+<br/>
+
+<div class="card container">
+    <div class="card-header heading" align="center" style="background-color:cadetblue;">
+        Please change your password !
+    </div>
+<div class="card-body lg-4 md-6 sm-12 xs-12" align="center">
+    <form novalidate (ngSubmit)="Pass_change(regForm)" #regForm="ngForm">
+        <!-- Password -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="Password">Current Password</label>
+            <div class="col-md-8">
+                <input type="password" required 
+                id="Password"  
+                name="pass" 
+                [(ngModel)]=admin.password 
+                #pass="ngModel"
+                minLength="7"
+                [ngClass]="{'is-invalid':(pass.touched||pass.dirty)&&!pass.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=pass.errors?.required>
+                        Password is required
+                    </span>
+
+                    <span *ngIf=pass.errors?.minLength>
+                        please enter valid password
+                    </span>
+                </span>
+            </div>            
+        </div>
+ 
+        <!--New password -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="NewPassword">New Password</label>
+            <div class="col-md-8">
+                <input type="password" required 
+                id="NewPassword"  
+                name="pass_1" 
+                [(ngModel)]=new_pass 
+                #pass_1="ngModel"
+                minlength="7"
+                [ngClass]="{'is-invalid':(pass_1.touched||pass_1.dirty)&&!pass_1.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=pass_1.errors?.required>
+                        Password is required
+                    </span>
+                    <span *ngIf=pass_1.errors?.minlength>
+                        The Password should be 7 characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+
+        <!--Re Enter password -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="RNewPassword">Re-enter Password</label>
+            <div class="col-md-8">
+                <input type="password" required 
+                id="RNewPassword"  
+                name="pass_2" 
+                [(ngModel)]=r_new_pass 
+                #pass_2="ngModel"
+                minlength="7"
+                [ngClass]="{'is-invalid':(pass_2.touched||pass_2.dirty)&&!pass_2.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=pass_2.errors?.required>
+                        Password is required
+                    </span>
+                    <span *ngIf=pass_2.errors?.minlength>
+                        The Password should be 7 characters long
+                    </span>
+                </span>
+            </div>            
+        </div>
+
+        <button class="btn btn-success" type="submit" [disabled]="!regForm.valid">Submit</button>
+        
+    </form>
+</div>
+</div>
+<br/>
+<br/>
+<br/>
+<br/>
+</body>
+</html>

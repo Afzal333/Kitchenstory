@@ -1,0 +1,108 @@
+<html>
+  
+
+<head>
+      
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<!--Navbar-->
+<body>
+  <div>
+<nav class="navbar navbar-expand-lg navbar-light  ">
+<div class="container-fluid">
+<img src="./assets/images/logo2.jpg" class="navbar-brand" width="100px" height="100px"/>
+<button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapseExample" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class=" nav-item active">
+        <a class="nav-link " id="anch" [routerLink]="['/home']" ><i class="fa fa-home"></i> Home</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" id="anch" [routerLink]="['/items']"><i class="fa fa-leaf" ></i> Kitchen Items</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" id="anch" [routerLink]="['/about']"><i class="fa fa-users" aria-hidden="true"></i> About Us</a>
+      </li>
+      <li class="nav-item active">
+        
+        <a class="nav-link" id="anch" [routerLink]="['/contact']"> <i class="bi bi-person-lines-fill"></i>Contact Us</a>
+      </li>
+      </ul>
+          <ul  class="navbar-nav ml-auto topnav">
+            <li class="nav-item active">
+              <a class="nav-link" id="anch" [routerLink]="['/cart']"><i class="fa fa-shopping-cart" aria-hidden="true"></i>Cart</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link"  id="anch" [routerLink]="['/home']"><i class="fa fa-sign-in" aria-hidden="true"></i>Logout</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+  </div>
+
+  <!--card-->
+
+
+  <div class="firstdiv">
+<div class="" align="center">
+    <div class="card-heaer heading">
+       <p style="color:indianred;font-size: 30px;">Item Name:{{kitchenitems.vegetablename}}</p>
+        <p style="color:rgb(70, 59, 223);font-size: 20px;">Quantity:{{kitchenitems.vegetablequantity}}</p>
+    </div>
+    <div align="center">
+    <img class="card-img-top " [src]='kitchenitems.vegetableimg'  style="width:450px ;height:350px;">
+    </div>
+    <div class="cardr-footer" >
+        
+        
+        <div style="color:indianred;font-size: 30px;">
+        <button class="btn btn-dark" (click)='increment()'>+</button>Quantity
+        <button class="btn btn-dark" (click)='decrement()'>-</button>
+        </div>
+        <br/>
+        <br/>
+        <button class="btn btn-dark"  (click)='addToCart(kitchenitems)'>Purchase</button>
+        <button class="btn btn-dark"(click)='goback()' style="float: left;">Back</button>
+        
+    </div>
+</div>
+  </div>
+  <div class="seconddiv">
+    <div class="" align="center">
+      <br/>
+      <h5 style="color:lightcoral">Delivery Policies</h5><br/>
+      <br/>
+      <p>
+        Slotted Delivery: Pick the most convenient delivery slot to have your grocery delivered. From early morning delivery for early birds, to late-night delivery for people who work the late shift, our caters to every schedule.</p><br/>
+<p>Express Delivery: This super useful service can be availed by customers in cities like Bangalore, Mumbai, Pune, Chennai, Kolkata, Hyderabad,Vijayawada,Visakhapatnam and Delhi-NCR in which we deliver your orders to your doorstep in 90 Minutes.</p><br/>
+<p> Specialty stores: Missed out on buying that essential item from your favorite neighborhood store for tonight’s party? We’ll deliver it for you!  we deliver your order in 90 minutes, through a special arrangement with a nearby specialty store, verified by us.
+      </p>
+      <br/>
+    
+    
+      <h5 style="color:lightcoral">Variable Weight Policy</h5><br/>
+      <p>Please note that the item(s) in this product may vary slightly in size and weight. Hence, the actual weight of the product delivered can have a small variance. You will be billed based on the actual weight during order processing.</p>
+    </div>
+    
+  </div>
+  <br/>
+  <br/>
+  
+  <footer>
+    <div class="text-center p-3" style="background-color:lightgray">
+        © Copyright:
+        
+        <a class="text-black" href="">KitchenStory.com</a>
+      
+      </div>
+    </footer> 
+</body>
+</html>

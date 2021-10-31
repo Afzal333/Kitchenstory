@@ -1,0 +1,137 @@
+
+import {Injectable}  from "@angular/core";
+import {Mykitchen} from "./kitchenitems";
+@Injectable({
+    providedIn:'root'
+})
+export class KitchenService
+{
+    private kitchen:Mykitchen[]=[
+        
+{
+    vegetableid:1,
+    vegetablename:"Tomato",
+    vegetablecost:50,
+    vegetableimg:"./assets/images/tomato.jpg"
+  },
+  {
+    vegetableid:2,
+    vegetablename:"Cabbage",
+    vegetablecost:40,
+    vegetableimg:"./assets/images/cabbage.jpg"
+  },
+  {
+    vegetableid:3,
+    vegetablename:"Carrot",
+    vegetablecost:60,
+    vegetableimg:"./assets/images/carrot.jpg"
+  },
+  {
+    vegetableid:4,
+    vegetablename:"Potato",
+    vegetablecost:30,
+    vegetableimg:"./assets/images/potato.jpg"
+  },
+  {
+    vegetableid:5,
+    vegetablename:"Banana",
+    vegetablecost:60,
+    vegetableimg:"./assets/images/banana.jpg"
+  },
+  {
+    vegetableid:6,
+    vegetablename:"Orange",
+    vegetablecost:55,
+    vegetableimg:"./assets/images/orange.jpg"
+  },
+  {
+    vegetableid:7,
+    vegetablename:"Straw Berry",
+    vegetablecost:70,
+    vegetableimg:"./assets/images/strawberry.jfif"
+  },
+  {
+    vegetableid:8,
+    vegetablename:"Black Grapes",
+    vegetablecost:60,
+    vegetableimg:"./assets/images/blackgrapes.jpg"
+  },
+  {
+    vegetableid:9,
+    vegetablename:"Kissmiss",
+    vegetablecost:70,
+    vegetableimg:"./assets/images/kissmiss.jpeg"
+  },
+  {
+    vegetableid:10,
+    vegetablename:"Kaaju",
+    vegetablecost:75,
+    vegetableimg:"./assets/images/kaaju.png"
+  },
+  {
+    vegetableid:11,
+    vegetablename:"Pista",
+    vegetablecost:60,
+    vegetableimg:"./assets/images/pista.jpeg"
+  },
+  {
+    vegetableid:12,
+    vegetablename:"Anjeer",
+    vegetablecost:50,
+    vegetableimg:"./assets/images/anjeer.jpeg"
+  },
+  {
+    vegetableid:13,
+    vegetablename:"Curd",
+    vegetablecost:30,
+    vegetableimg:"./assets/images/curd.png"
+  },
+  {
+    vegetableid:14,
+    vegetablename:"Butter",
+    vegetablecost:40,
+    vegetableimg:"./assets/images/butter.jpeg"
+  },
+  {
+    vegetableid:15,
+    vegetablename:"Cheese",
+    vegetablecost:60,
+    vegetableimg:"./assets/images/cheese.jpg"
+  },
+  {
+    vegetableid:16,
+    vegetablename:"Milk",
+    vegetablecost:70,
+    vegetableimg:"./assets/images/milk.png"
+  },{
+    vegetableid:17,
+    vegetablename:"Eggs",
+    vegetablecost:100,
+    vegetableimg:"./assets/images/eggs.jpeg"
+  },
+  {
+    vegetableid:18,
+    vegetablename:"Brinjal",
+    vegetablecost:70,
+    vegetableimg:"./assets/images/brinjal.jpeg"
+  },
+  {
+    vegetableid:19,
+    vegetablename:"Lettuce",
+    vegetablecost:30,
+    vegetableimg:"./assets/images/lettuce.jpg"
+  },
+  {
+    vegetableid:20,
+    vegetablename:"Sorrel",
+    vegetablecost:40,
+    vegetableimg:"./assets/images/sorrel.jpg"
+  }
+    ];
+    getItems():Mykitchen[]
+    {
+        return this.kitchen;
+    }
+   
+}
+

@@ -1,0 +1,67 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+      <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light  ">
+            <div class="container-fluid">
+            <img src="./assets/images/logo2.jpg" class="navbar-brand" width="100px"  height="100px"/>
+            <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapseExample" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" id="anch" [routerLink]="['/changepwd']"><i class="fa fa-leaf" ></i> Change Password</a>
+                      </li>
+                 
+                 
+                  
+                  </ul>
+                  <ul  class="navbar-nav ml-auto topnav">
+                    <li class="nav-item active">
+                        <a [routerLink]="['/additems']" id="anch" class="nav-link"> <i class="fa fa-plus" aria-hidden="true"></i>Add </a>
+                      </li>
+                    
+                    <li class="nav-item active">
+                      <a class="nav-link" id="anch" [routerLink]="['/']"><i class="fa fa-sign-in" aria-hidden="true"></i> Logout</a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </div>
+            </nav>
+            <!--Items-->
+<div class="container" style="background-color:mistyrose">
+<div class='table-responsive'>
+    <table class="table">
+        
+            <tr>
+                <th>Items</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Cost</th>
+                
+                
+                <th>Delete</th>
+
+            </tr>
+        
+        <tbody>
+            <tr *ngFor='let mov of viewtbl'>
+                        <img [src]='mov.vegetableimg' [width]='imgWidth' [height]='imgHeight'
+                            [style.borderRadius.px]='imgRadius'>
+                            <td>{{mov.vegetableid}}</td>
+                <td>{{mov.vegetablename}}</td>
+                <td>{{mov.vegetablecost}}</td>
+                
+    <td><button class="btn btn-dark" (click)="onDelete(mov.vegetablename)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
+    </body>
+    </html>
+

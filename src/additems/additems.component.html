@@ -1,0 +1,143 @@
+
+<div class="card container">
+    <div class="card-header heading" align="center" style="background-color:cadetblue;">
+        Add New Item Here!
+    </div>
+<div class="card-body lg-4 md-6 sm-12 xs-12" align="center">
+    <form novalidate (ngSubmit)="onItemAdd(regForm)" #regForm="ngForm">
+        <!-- Item id -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="vegetableid">Itemid</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="vegetableid" 
+                minlength="1" 
+                name="vegetableid" 
+                [(ngModel)]=item.vegetableid 
+                #vegetableid="ngModel"
+                [ngClass]="{'is-invalid':(vegetableid.touched||vegetableid.dirty)&&!vegetableid.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=vegetableid.errors?.required>
+                        The item ID is required
+                    </span>
+
+                    
+                </span>
+            </div>            
+        </div>
+        <!-- Item Name -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="vegatblename">Item Name</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="vegetableme" 
+                minlength="1" 
+                name="vegetablename" 
+                [(ngModel)]=item.vegetablename
+                #vegetablename="ngModel"
+                [ngClass]="{'is-invalid':(vegetablename.touched||vegetablename.dirty)&&!vegetablename.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=vegetablename.errors?.required>
+                        The item name is required
+                    </span>
+
+                    
+                </span>
+            </div>            
+        </div>
+
+        
+
+        <!-- Item Image -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="vegetableimg">Source</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="vegetableimg" 
+                minlength="1" 
+                name="vegetableimg" 
+                [(ngModel)]=item.vegetableimg
+                #vegetableimg="ngModel"
+                [ngClass]="{'is-invalid':(vegetableimg.touched||vegetableimg.dirty)&&!vegetableimg.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=vegetableimg.errors?.required>
+                         Please provide proper source
+                    </span>
+
+                    
+                </span>
+            </div>            
+        </div>
+
+        <!-- Item Cost -->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="vegetablecost">Price</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="vegetablecost" 
+                minlength="1" 
+                name="vegetablecost" 
+                [(ngModel)]=item.vegetablecost
+                #vegetablecost="ngModel"
+                [ngClass]="{'is-invalid':(vegetablecost.touched||vegetablecost.dirty)&&!vegetablecost.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=vegetablecost.errors?.required>
+                         Please provide proper source
+                    </span>
+
+                    
+                </span>
+            </div>            
+        </div>
+        <!--Item Quantity-->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="vegetablequantity">Quantity</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="vegetablequantity" 
+                minlength="1" 
+                name="vegetablequantity" 
+                [(ngModel)]=item.vegetablequantity
+                #vegetablequantity="ngModel"
+                [ngClass]="{'is-invalid':(vegetablequantity.touched||vegetablequantity.dirty)&&!vegetablequantity.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=vegetablequantity.errors?.required>
+                         Please provide proper source
+                    </span>
+
+                    
+                </span>
+            </div>            
+        </div>
+        <!--Item Totalprice-->
+        <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label" for="totalprice">Total Price</label>
+            <div class="col-md-8">
+                <input type="text" required 
+                id="totalprice" 
+                minlength="1" 
+                name="totalprice" 
+                [(ngModel)]=item.totalprice
+                #totalprice="ngModel"
+                [ngClass]="{'is-invalid':(totalprice.touched||totalprice.dirty)&&!totalprice.valid}"/>
+
+                <span class="invalid-feedback">
+                    <span *ngIf=totalprice.errors?.required>
+                         Please provide proper source
+                    </span>
+
+                    
+                </span>
+            </div>            
+        </div>
+
+        
+     <button class="btn btn-success" type="submit" [disabled]="!regForm.valid">submit</button>
+    </form>
+</div>
+</div>  

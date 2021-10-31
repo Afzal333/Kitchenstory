@@ -1,0 +1,71 @@
+<html>
+  
+
+<head>
+      
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  <!--Navbar-->
+  <div>
+<nav class="navbar navbar-expand-lg navbar-light  ">
+<div class="container-fluid">
+<img src="./assets/images/logo2.jpg" class="navbar-brand" width="100px" height="100px"/>
+<button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#collapseExample" aria-controls="navbar-nav" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      
+      <li class="nav-item active">
+        <a class="nav-link" id="anch" [routerLink]="['/items']"><i class="fa fa-leaf" ></i> Kitchen Items</a>
+      </li>
+      
+      </ul>
+          <ul  class="navbar-nav ml-auto topnav">
+            
+            <li class="nav-item active">
+              <a class="nav-link"  id="anch" [routerLink]="['/home']"><i class="fa fa-sign-in" aria-hidden="true"></i>Logout</a>
+            </li>
+          
+        </ul>
+      </div>
+    </div>
+    </nav>
+  </div>
+
+<!--Detail-->
+<h3 align="center" style="color:darksalmon">Cart</h3>
+<div class='table-responsive' style="background-color: mistyrose;">
+  <table class='table'>
+      
+      <tbody>
+          <tr *ngFor='let mov of items'>
+                      <img [src]='mov.vegetableimg' [width]='imgWidth' [height]='imgHeight'
+                          [style.borderRadius.px]='imgRadius'>
+              <td>{{mov.vegetablename}}</td>
+              <td>{{mov.vegetablecost|currency:"INR"}}</td>
+              <td><button class="btn btn-dark" (click)='increment(mov.vegetableid)'>+</button>{{mov.vegetablequantity}}
+                <button class="btn btn-dark" (click)='decrement(mov.vegetableid)'>-</button></td>
+                <td>{{mov.totalprice|currency:"INR"}}</td>
+  <td><button class="btn btn-dark" (click)="onDelete(mov.vegetablename)">Remove</button></td>
+          </tr>
+          <tr >
+            <td colspan="4" align="center">TotalAmount</td>
+            <td >{{cartTotal|currency:"INR"}}</td>
+            <td><button class="btn btn-dark" (click)="clearCart()">Remove All</button></td>
+          </tr>
+      </tbody>
+  </table>
+  
+</div>
+<div align="center">
+  <button class="btn btn-dark" (click)="pay()">Check Out</button>
+</div>
+<br/>
+ 

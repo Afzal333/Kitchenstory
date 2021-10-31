@@ -1,0 +1,29 @@
+/* img
+{
+    width:450px ;
+    height:350px;
+} */
+
+.navbar{
+    background-color:rgb(0, 0, 0);
+}
+#anch
+{
+    color:floralwhite;
+    font-size: 15px;
+    
+}
+#anch:hover{
+    color:rgb(240, 187, 195);
+}
+.firstdiv
+{
+    width:50%;
+    height:100%;
+        float:left;
+        margin-left:20px;  
+}
+/* p{
+    color:indianred;
+    text-size-adjust:"50px";
+} */
